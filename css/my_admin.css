@@ -1,0 +1,18 @@
+.report_summary{
+    margin-bottom: 50px;
+}
+
+.text_danger{
+    color:#E74955;
+}
+
+.text_success{
+    color:#90C31E;
+}
+
+
+#tabs {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80%;
+}

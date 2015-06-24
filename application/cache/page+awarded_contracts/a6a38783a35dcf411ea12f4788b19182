@@ -1,0 +1,65 @@
+O:12:"CI_DB_result":8:{s:7:"conn_id";N;s:9:"result_id";N;s:12:"result_array";a:1:{i:0;a:1:{s:5:"query";s:1486:"SELECT 
+  procurement_plans.title AS procurement_plan,
+  procurement_plan_entries.procurement_ref_no,
+  procurement_plan_entries.contract_award,
+  procurement_plan_entries.subject_of_procurement,
+  procurement_types.title AS procurement_type,
+  procurement_methods.title AS procurement_method,
+  funding_sources.title AS funding_source,
+  pdes.pdename,
+  contracts.commencement_date,
+  contracts.contract_amount,
+  contracts.completion_date,
+  contracts.amount_currency,
+  contracts.days_duration,
+  contracts.dateawarded
+  
+  FROM procurement_plans
+  INNER JOIN procurement_plan_entries
+    ON procurement_plans.id = procurement_plan_entries.procurement_plan_id
+  INNER JOIN procurement_types
+    ON procurement_plan_entries.procurement_type = procurement_types.id
+  INNER JOIN procurement_methods
+    ON procurement_plan_entries.procurement_method = procurement_methods.id
+  INNER JOIN funding_sources
+    ON procurement_plan_entries.funding_source = funding_sources.id
+  INNER JOIN pdes
+    ON procurement_plans.pde_id = pdes.pdeid
+  LEFT OUTER JOIN initiate_procurements
+    ON procurement_plan_entries.procurement_ref_no = initiate_procurements.procurement_ref_no
+  LEFT OUTER JOIN bidinvitations
+    ON procurement_plan_entries.procurement_ref_no = bidinvitations.procurement_ref_no
+  LEFT OUTER JOIN contracts
+  	ON procurement_plan_entries.procurement_ref_no = contracts.procurement_ref_no WHERE contracts.id = '_ID_' AND contracts.isActive = 'Y'";}}s:13:"result_object";a:1:{i:0;O:8:"stdClass":1:{s:5:"query";s:1486:"SELECT 
+  procurement_plans.title AS procurement_plan,
+  procurement_plan_entries.procurement_ref_no,
+  procurement_plan_entries.contract_award,
+  procurement_plan_entries.subject_of_procurement,
+  procurement_types.title AS procurement_type,
+  procurement_methods.title AS procurement_method,
+  funding_sources.title AS funding_source,
+  pdes.pdename,
+  contracts.commencement_date,
+  contracts.contract_amount,
+  contracts.completion_date,
+  contracts.amount_currency,
+  contracts.days_duration,
+  contracts.dateawarded
+  
+  FROM procurement_plans
+  INNER JOIN procurement_plan_entries
+    ON procurement_plans.id = procurement_plan_entries.procurement_plan_id
+  INNER JOIN procurement_types
+    ON procurement_plan_entries.procurement_type = procurement_types.id
+  INNER JOIN procurement_methods
+    ON procurement_plan_entries.procurement_method = procurement_methods.id
+  INNER JOIN funding_sources
+    ON procurement_plan_entries.funding_source = funding_sources.id
+  INNER JOIN pdes
+    ON procurement_plans.pde_id = pdes.pdeid
+  LEFT OUTER JOIN initiate_procurements
+    ON procurement_plan_entries.procurement_ref_no = initiate_procurements.procurement_ref_no
+  LEFT OUTER JOIN bidinvitations
+    ON procurement_plan_entries.procurement_ref_no = bidinvitations.procurement_ref_no
+  LEFT OUTER JOIN contracts
+  	ON procurement_plan_entries.procurement_ref_no = contracts.procurement_ref_no WHERE contracts.id = '_ID_' AND contracts.isActive = 'Y'";}}s:20:"custom_result_object";a:0:{}s:11:"current_row";i:0;s:8:"num_rows";i:1;s:8:"row_data";N;}
